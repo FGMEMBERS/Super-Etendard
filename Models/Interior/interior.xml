@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <path>interior.ac</path>
+
+  <animation>
+    <!-- Objets opaques -->
+    <object-name>interieur</object-name>
+    <object-name>inttour</object-name>
+    <object-name>inttourcanopy</object-name>
+
+    <!-- Objets transparents -->
+    <object-name>intvitres</object-name>
+    <object-name>intcanopy</object-name>
+  </animation>
+
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+    <object-name>intvitres</object-name>
+    <object-name>intcanopy</object-name>
+  </animation>
+
+  <animation>
+    <type>noshadow</type>
+    <object-name>intvitres</object-name>
+    <object-name>intcanopy</object-name>
+  </animation>
+
+  <!-- Tableau de bord -->
+  <model>
+    <path>Aircraft/Super-Etendard/Models/Interior/Panel/panel.xml</path>
+    <offsets>
+      <x-m> -4.502 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -0.342 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+  <!-- Pilote -->
+  <model>
+    <path>Aircraft/Super-Etendard/Models/Pilot/pilot.xml</path>
+    <offsets>
+      <x-m> -3.732 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -0.306 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Canopy -->
+  <animation>
+    <name>IntCanope</name>
+    <object-name>inttourcanopy</object-name>
+    <object-name>intcanopy</object-name>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>IntCanope</object-name>
+    <property>instrumentation/doors/crew/position-norm</property>
+    <interpolation>
+      <entry><ind> 0 </ind><dep>  0 </dep></entry>
+      <entry><ind> 1 </ind><dep> 60 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m> -3.232 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m>  0.330 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+</PropertyList>
+

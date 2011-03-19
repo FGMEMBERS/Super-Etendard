@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Dassault-Breguet Super Etendard : BARANGER Emmanuel (2011) 
+
+     Sources              : http://en.wikipedia.org/wiki/Dassault-Breguet_Super_%C3%89tendard
+
+     Wingspan             :     9.60 m   ( 31 ft  6     in)
+     Length               :    14.31 m   ( 45 ft 11 7/2 in)
+     Height               :     3.86 m   ( 12 ft  8     in)
+     Empty mass           :     6500 kg  ( 14330 lb       )
+     Engine               : SNECMA Atar 8K-50 turbojet, (11025 lbf)
+     Maximum speed        : 1180 km/h    (   637 kts      ) at low level
+     Cruise speed         : 956 km/h     (   516 kts      )
+-->
+
+<airplane mass="14330">
+
+  <approach speed="130" aoa="6" fuel="0.3">
+    <control-setting axis="/controls/engines/engine[0]/throttle" value="0.3"/>
+    <control-setting axis="/controls/engines/engine[0]/reheat" value="0"/>
+    <control-setting axis="/controls/gear/gear-down" value="1"/>
+    <control-setting axis="/controls/flight/speedbrake" value="1"/>
+  </approach>
+
+  <cruise speed="516" alt="20000">
+    <control-setting axis="/controls/engines/engine[0]/throttle" value="0.7"/>
+    <control-setting axis="/controls/engines/engine[0]/reheat" value="0"/>
+    <control-setting axis="/controls/gear/gear-down" value="0"/>
+    <control-setting axis="/controls/flight/speedbrake" value="0"/>
+  </cruise>
+
+  <cockpit x="3.777" y="0" z="0.194"/>
+
+  <!-- Fuselage -->
+  <fuselage ax="7.130" ay=" 0.000" az="-0.852" bx=" 4.148" by=" 0.000" bz="-0.492" width="0.756" taper="0.08" midpoint="1.00"/>
+  <fuselage ax="4.148" ay=" 0.000" az="-0.492" bx="-6.161" by=" 0.000" bz="-0.390" width="1.500" taper="0.50" midpoint="0.20"/>
+
+  <!-- Cockpit -->
+  <fuselage ax="5.276" ay=" 0.000" az="-0.142" bx="-0.428" by=" 0.000" bz=" 0.245" width="0.800" taper="0.00" midpoint="0.20"/>
+
+  <!-- Engine -->
+  <fuselage ax="3.689" ay=" 0.397" az="-0.498" bx="-6.161" by=" 0.000" bz="-0.390" width="1.000" taper="0.60" midpoint="0.05"/>
+  <fuselage ax="3.689" ay="-0.397" az="-0.498" bx="-6.161" by=" 0.000" bz="-0.390" width="1.000" taper="0.60" midpoint="0.05"/>
+
+  <wing x="0.10" y="0.247" z="-0.543"
+        chord="4.300"
+        length="6.0"
+        taper="0.4"
+        sweep="41"
+        dihedral="-2"
+        camber="0.01">
+        <stall aoa="20" width="1" peak="1.2"/>
+        <flap0 start="0.14" end="0.56" lift="1.5" drag="1.4"/>
+        <flap1 start="0.25" end="0.80" lift="1.2" drag="1.1"/>
+        <spoiler start="0.56" end="0.80" lift="6" drag="5"/>
+
+        <control-input axis="/controls/flight/flaps" control="FLAP0"/>
+        <control-input axis="/controls/flight/aileron" control="FLAP1" split="true" src0="-0.5" src1="0.5" dst0="-0.9" dst1="0.9"/>
+        <control-input axis="/controls/flight/aileron-trim" control="FLAP1" split="true"/>
+        <control-input axis="/controls/flight/spoilers" control="SPOILER"/>
+
+        <control-output control="FLAP0" prop="/surface-positions/flaps-pos-norm"/>
+        <control-output control="FLAP1" side="left" prop="/surface-positions/left-aileron-pos-norm"/>
+        <control-output control="FLAP1" side="right" prop="/surface-positions/right-aileron-pos-norm"/>
+        <control-output control="SPOILER" prop="/surface-positions/spoiler-pos-norm" invert="true" />
+
+        <control-speed control="FLAP0" transition-time="4"/>
+        <control-speed control="SPOILER" transition-time="0.5"/>
+  </wing>
+
+  <hstab x="-5.038" y="0.15" z="0.665"
+         chord="1.915"
+         length="2.2"
+         taper="0.7"
+         sweep="42">
+         <stall aoa="20" width="1" peak="1.0" />
+         <flap0 start="0" end="0.82" lift="1.3" drag="1.2"/>
+
+         <control-input axis="/controls/flight/elevator" control="FLAP0"/>
+         <control-input axis="/controls/flight/elevator-trim" control="FLAP0"/>
+
+         <control-output control="FLAP0" prop="/surface-positions/elevator-pos-norm"/>
+  </hstab>
+
+  <vstab x="-4.091" y="0" z="0.103"
+         chord="4"
+         length="3.3"
+         taper="0.22"
+         sweep="52">
+         <stall aoa="18" width="1" peak="1.2"/>
+         <flap0 start="0.30" end="1" lift="1.2" drag="1.1"/>
+
+         <control-input axis="/controls/flight/rudder" control="FLAP0" invert="true"/>
+
+         <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm"/>
+  </vstab>
+
+  <!-- Engines   source            : http://en.wikipedia.org/wiki/SNECMA_Atar
+
+                 name              : SNECMA Atar
+                 type              : Afterburning turbojet
+                 power cruise      :  9436 lbf
+                 afterburner       : 13688 lbf
+                 weight            : 1456 kg (3210 lb)
+  -->
+  <jet x="-0.998" y="0" z="-0.441"
+       mass="3210"
+       thrust="9436"
+       afterburner="13688"
+       egt="935"
+       spool-time="6">
+       <actionpt x="-6.161" y="0" z="-0.390"/>
+       <control-input axis="/controls/engines/engine[0]/throttle" control="THROTTLE"/>
+       <control-input axis="/controls/engines/engine[0]/reheat" control="REHEAT"/>
+       <control-speed control="THROTTLE" transition-time="2"/>
+       <control-speed control="REHEAT" transition-time="2"/>
+  </jet>
+
+  <!-- Roue avant -->
+  <gear x="3.442" y="0" z="-2.303"
+        retract-time="7"
+        compression="0.4"
+        spring="1.1"
+        damp="1.4"
+        sfric="1.1"
+        dfric="1.1">
+        <control-input axis="/controls/flight/rudder" control="STEER" src0="-1.0" src1="1.0" dst0="-0.2" dst1="0.2"/>
+        <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+
+        <control-output control="EXTEND" prop="/gear/gear[0]/position-norm"/>
+
+        <control-speed control="EXTEND" transition-time="7"/>
+  </gear>
+
+  <!-- Roue gauche -->
+  <gear x="-1.352" y="1.767" z="-1.954"
+        retract-time="7"
+        compression="0.6"
+        spring="0.85"
+        damp="2">
+        <control-input axis="/controls/gear/brake-left" control="BRAKE"/>
+        <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
+        <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+
+        <control-speed control="EXTEND" transition-time="7"/>
+
+        <control-output control="EXTEND" prop="/gear/gear[1]/position-norm"/>
+  </gear>
+
+  <!-- Roue droite -->
+  <gear x="-1.352" y="-1.767" z="-1.954"
+        retract-time="7"
+        compression="0.6"
+        spring="0.85"
+        damp="2">
+        <control-input axis="/controls/gear/brake-right" control="BRAKE"/>
+        <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
+        <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+
+        <control-speed control="EXTEND" transition-time="7"/>
+
+        <control-output control="EXTEND" prop="/gear/gear[2]/position-norm"/>
+  </gear>
+
+  <tank x="-1.082" y=" 1.985" z="-0.595" jet="true" capacity="2500"/>
+  <tank x="-1.082" y="-1.985" z="-0.595" jet="true" capacity="2500"/>
+
+  <!-- Crosse d'appontage -->
+  <hook x="-3.810" y="0.0" z="-0.881" length="1.910" down-angle="38" up-angle="0">
+        <control-input axis="/controls/gear/tailhook" control="HEXTEND"/>
+        <control-speed control="HEXTEND" transition-time="4"/>
+  </hook>
+
+  <!-- Launch-bar --> 
+  <launchbar x="3.442" y="0.000" z="-2.303"  length="0.6">
+             <control-input axis="/controls/gear/launchbar" control="LEXTEND"/>
+             <control-speed control="LEXTEND" transition-time="1"/>
+  </launchbar>
+    
+  <!-- Mass distribution -->
+  <ballast x="4" y="0" z="-3" mass="1500"/>
+ 
+</airplane>
+

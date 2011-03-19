@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <sim include="Nasal/views.xml">
+
+    <author>BARANGER Emmanuel</author>
+    <aircraft-version>0.1</aircraft-version>
+    <status>0.1 Alpha</status>
+
+    <fuel-fraction>0.8</fuel-fraction>
+
+    <model>
+      <path>Aircraft/Super-Etendard/Models/super-etendard.xml</path>
+      <livery>
+        <file type="string">default</file>
+      </livery>
+    </model>
+
+    <submodels> 
+      <serviceable type="bool">true</serviceable>
+      <path>Aircraft/Super-Etendard/Models/Effects/guns/submodels.xml</path>
+    </submodels>
+
+    <startup>
+      <splash-texture>Aircraft/Super-Etendard/super-etendard-splash.png</splash-texture>
+    </startup>
+
+    <sound>
+      <path>Aircraft/Super-Etendard/Sounds/super-etendard-sound.xml</path>
+    </sound>
+
+    <multiplay>
+      <chat_display>1</chat_display>
+      <generic> 
+        <int type="int">  0 </int>  <!-- 0 immat -->
+        <int type="int">  0 </int>  <!-- 1 immat -->
+        <int type="int">  0 </int>  <!-- 2 immat -->
+        <int type="int">  0 </int>  <!-- 3 immat -->
+        <int type="int">  0 </int>  <!-- 4 immat -->
+        <int type="int">  0 </int>  <!-- 5 immat -->
+        <int type="bool"> 0 </int>  <!-- 6 smoke -->
+        <int type="int">  0 </int>  <!-- 7 color -->
+        <float n="0" alias="/instrumentation/doors/crew/position-norm"/>
+        <float n="1" alias="/instrumentation/doors/passenger/position-norm"/>
+      </generic>
+    </multiplay>
+
+    <flaps>
+      <setting> 0.00 </setting>
+      <setting> 0.25 </setting>
+      <setting> 0.50 </setting>
+      <setting> 0.75 </setting>
+      <setting> 1.00 </setting>
+    </flaps>
+
+    <help>
+      <title>Super Etendard</title>
+      <key>
+        <name>d</name>
+        <desc>Open/Close canopy</desc>
+      </key>
+      <key>
+        <name>D</name>
+        <desc>Open/Close probe</desc>
+      </key>
+      <key>
+        <name>C</name>
+        <desc>Catapult Launch Command</desc>
+      </key>
+      <key>
+        <name>L</name>
+        <desc>Launch-bar engage</desc>
+      </key>
+      <key>
+        <name>o/O</name>
+        <desc>Hook up/down</desc>
+      </key>
+      <key>
+        <name>f</name>
+        <desc>Wings fold</desc>
+      </key>
+    </help>
+
+    <menubar include="Dialogs/super-etendard-menu.xml"/>
+	
+  </sim>
+
+  <input>
+    <keyboard include="Nasal/super-etendard-keyboard.xml"/>
+  </input>
+ 
+  <controls>
+    <gear>
+      <brake-parking type="double"> 1 </brake-parking>
+    </gear>
+  </controls>
+
+  <systems>
+    <refuel>
+      <type>probe</type>
+      <serviceable type="bool">true</serviceable>
+    </refuel>
+  </systems>
+
+  <nasal>
+    <doors>
+      <file>Aircraft/Super-Etendard/Nasal/doors.nas</file>
+    </doors>
+    <superetendard>
+      <file>Aircraft/Super-Etendard/Nasal/liveries.nas</file>
+      <file>Aircraft/Super-Etendard/Nasal/light.nas</file>
+    </superetendard>
+    <guns>
+      <file>Aircraft/Super-Etendard/Nasal/weapons.nas</file>
+      <file>Aircraft/Super-Etendard/Nasal/revi.nas</file>
+    </guns>
+  </nasal>
+
+</PropertyList>
+
