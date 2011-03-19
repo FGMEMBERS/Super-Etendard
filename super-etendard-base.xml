@@ -110,7 +110,17 @@
     <superetendard>
       <file>Aircraft/Super-Etendard/Nasal/liveries.nas</file>
       <file>Aircraft/Super-Etendard/Nasal/light.nas</file>
+      <file>Aircraft/Super-Etendard/Nasal/millibar.nas</file>
     </superetendard>
+    <radar>
+      <file>Aircraft/Instruments-3d/radar2/radar2.nas</file>
+    </radar>
+    <radardist>
+      <file>Aircraft/Instruments-3d/radardist/radardist.nas</file>
+    </radardist>
+    <rwr>
+      <file>Aircraft/Super-Etendard/Models/Interior/Panel/Instruments/rwr/rwr.nas</file>
+    </rwr>
     <guns>
       <file>Aircraft/Super-Etendard/Nasal/weapons.nas</file>
       <file>Aircraft/Super-Etendard/Nasal/revi.nas</file>
