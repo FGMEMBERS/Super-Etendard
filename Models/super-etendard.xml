@@ -31,16 +31,22 @@
     <!-- Objets opaques -->
     <object-name>fuselage</object-name>
     <object-name>ailes</object-name>
+    <object-name>slatG</object-name>
+    <object-name>slatD</object-name>
     <object-name>aileronG</object-name>
     <object-name>aileronD</object-name>
     <object-name>voletG</object-name>
     <object-name>voletD</object-name>
+    <object-name>voletavantG</object-name>
+    <object-name>voletavantD</object-name>
     <object-name>ailes2</object-name>
     <object-name>direction</object-name>
     <object-name>profondeurG</object-name>
     <object-name>profondeurD</object-name>
     <object-name>boutaileG</object-name>
+    <object-name>boutslatG</object-name>
     <object-name>boutaileD</object-name>
+    <object-name>boutslatD</object-name>
     <object-name>ailettes</object-name>
     <object-name>porteA1</object-name>
     <object-name>porteA2</object-name>
@@ -59,6 +65,9 @@
     <object-name>capot1</object-name>
     <object-name>capot2</object-name>
     <object-name>antennes</object-name>
+    <object-name>attaches</object-name>
+    <object-name>attacheG</object-name>
+    <object-name>attacheD</object-name>
 
     <object-name>crosse</object-name>
     <object-name>guns</object-name>
@@ -83,16 +92,22 @@
     <type>material</type>
     <object-name>fuselage</object-name>
     <object-name>ailes</object-name>
+    <object-name>slatG</object-name>
+    <object-name>slatD</object-name>
     <object-name>aileronG</object-name>
     <object-name>aileronD</object-name>
     <object-name>voletG</object-name>
     <object-name>voletD</object-name>
+    <object-name>voletavantG</object-name>
+    <object-name>voletavantD</object-name>
     <object-name>ailes2</object-name>
     <object-name>direction</object-name>
     <object-name>profondeurG</object-name>
     <object-name>profondeurD</object-name>
     <object-name>boutaileG</object-name>
+    <object-name>boutslatG</object-name>
     <object-name>boutaileD</object-name>
+    <object-name>boutslatD</object-name>
     <object-name>ailettes</object-name>
     <object-name>porteA1</object-name>
     <object-name>porteA2</object-name>
@@ -111,6 +126,9 @@
     <object-name>capot1</object-name>
     <object-name>capot2</object-name>
     <object-name>antennes</object-name>
+    <object-name>attaches</object-name>
+    <object-name>attacheG</object-name>
+    <object-name>attacheD</object-name>
 
     <object-name>crosse</object-name>
     <object-name>guns</object-name>
@@ -178,16 +196,22 @@
     <inherits-from>Aircraft/Generic/Effects/Fuselagereflect</inherits-from>
     <object-name>fuselage</object-name>
     <object-name>ailes</object-name>
+    <object-name>slatG</object-name>
+    <object-name>slatD</object-name>
     <object-name>aileronG</object-name>
     <object-name>aileronD</object-name>
     <object-name>voletG</object-name>
     <object-name>voletD</object-name>
+    <object-name>voletavantG</object-name>
+    <object-name>voletavantD</object-name>
     <object-name>ailes2</object-name>
     <object-name>direction</object-name>
     <object-name>profondeurG</object-name>
     <object-name>profondeurD</object-name>
     <object-name>boutaileG</object-name>
+    <object-name>boutslatG</object-name>
     <object-name>boutaileD</object-name>
+    <object-name>boutslatD</object-name>
     <object-name>porteA1</object-name>
     <object-name>porteA2</object-name>
     <object-name>porteA3</object-name>
@@ -206,6 +230,9 @@
     <object-name>capot1</object-name>
     <object-name>capot2</object-name>
     <object-name>antennes</object-name>
+    <object-name>attaches</object-name>
+    <object-name>attacheG</object-name>
+    <object-name>attacheD</object-name>
   </effect>
 
   <!-- Une ombre pour OSG -->
@@ -447,32 +474,146 @@
 
   <!-- Volets -->
   <animation>
-    <type>rotate</type>
+    <name>VoletGauche</name>
     <object-name>voletG</object-name>
+    <object-name>attacheG</object-name>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>VoletGauche</object-name>
     <property>surface-positions/flaps-pos-norm</property>
     <factor> 45 </factor>
     <axis>
       <x1-m>  3.071 </x1-m>
       <y1-m> -2.781 </y1-m>
-      <z1-m> -0.684 </z1-m>
+      <z1-m> -1.001 </z1-m>
       <x2-m>  1.808 </x2-m>
       <y2-m> -0.958 </y2-m>
-      <z2-m> -0.644 </z2-m>
+      <z2-m> -0.961 </z2-m>
     </axis>
   </animation>
 
   <animation>
     <type>rotate</type>
+    <object-name>voletavantG</object-name>
+    <property>surface-positions/flaps-pos-norm</property>
+    <factor> 22.5 </factor>
+    <axis>
+      <x1-m>  3.071 </x1-m>
+      <y1-m> -2.781 </y1-m>
+      <z1-m> -1.001 </z1-m>
+      <x2-m>  1.808 </x2-m>
+      <y2-m> -0.958 </y2-m>
+      <z2-m> -0.961 </z2-m>
+    </axis>
+  </animation>
+
+  <animation>
+    <name>SlatGauche</name>
+    <object-name>slatG</object-name>
+    <object-name>boutslatG</object-name>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>SlatGauche</object-name>
+    <property>surface-positions/flaps-pos-norm</property>
+    <interpolation>
+      <entry><ind> 0 </ind><dep>  0.0 </dep></entry>
+      <entry><ind> 1 </ind><dep> -0.2 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>SlatGauche</object-name>
+    <property>surface-positions/flaps-pos-norm</property>
+    <factor> -20 </factor>
+    <axis>
+      <x1-m>  2.983 </x1-m>
+      <y1-m> -4.654 </y1-m>
+      <z1-m> -0.745 </z1-m>
+      <x2-m> -0.420 </x2-m>
+      <y2-m> -1.336 </y2-m>
+      <z2-m> -0.640 </z2-m>
+    </axis>
+  </animation>
+
+  <animation>
+    <name>VoletDroit</name>
     <object-name>voletD</object-name>
+    <object-name>attacheD</object-name>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>VoletDroit</object-name>
     <property>surface-positions/flaps-pos-norm</property>
     <factor> 45 </factor>
     <axis>
       <x1-m>  1.808 </x1-m>
       <y1-m>  0.958 </y1-m>
-      <z1-m> -0.644 </z1-m>
+      <z1-m> -0.961 </z1-m>
       <x2-m>  3.071 </x2-m>
       <y2-m>  2.781 </y2-m>
-      <z2-m> -0.684 </z2-m>
+      <z2-m> -1.001 </z2-m>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>voletavantD</object-name>
+    <property>surface-positions/flaps-pos-norm</property>
+    <factor> 22.5 </factor>
+    <axis>
+      <x1-m>  1.808 </x1-m>
+      <y1-m>  0.958 </y1-m>
+      <z1-m> -0.961 </z1-m>
+      <x2-m>  3.071 </x2-m>
+      <y2-m>  2.781 </y2-m>
+      <z2-m> -1.001 </z2-m>
+    </axis>
+  </animation>
+
+  <animation>
+    <name>SlatDroit</name>
+    <object-name>slatD</object-name>
+    <object-name>boutslatD</object-name>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>SlatDroit</object-name>
+    <property>surface-positions/flaps-pos-norm</property>
+    <interpolation>
+      <entry><ind> 0 </ind><dep>  0.0 </dep></entry>
+      <entry><ind> 1 </ind><dep> -0.2 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>SlatDroit</object-name>
+    <property>surface-positions/flaps-pos-norm</property>
+    <factor> -20 </factor>
+    <axis>
+      <x1-m> -0.420 </x1-m>
+      <y1-m>  1.336 </y1-m>
+      <z1-m> -0.640 </z1-m>
+      <x2-m>  2.983 </x2-m>
+      <y2-m>  4.654 </y2-m>
+      <z2-m> -0.745 </z2-m>
     </axis>
   </animation>
 
@@ -995,6 +1136,7 @@
   <animation>
     <name>TipWingLeft</name>
     <object-name>boutaileG</object-name>
+    <object-name>boutslatG</object-name>
     <object-name>Rouge</object-name>
     <object-name>BlancGauche</object-name>
   </animation>
@@ -1017,6 +1159,7 @@
   <animation>
     <name>TipWingRight</name>
     <object-name>boutaileD</object-name>
+    <object-name>boutslatD</object-name>
     <object-name>Vert</object-name>
     <object-name>BlancDroit</object-name>
   </animation>

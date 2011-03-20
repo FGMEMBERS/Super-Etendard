@@ -159,9 +159,9 @@
     <object-name>KI206.knob</object-name>
     <property>instrumentation/nav/radials/selected-deg</property>
     <center>
-      <x-m>  0.007 </x-m>
-      <y-m> -0.040 </y-m>
-      <z-m> -0.040 </z-m>
+      <x-m>  0.005 </x-m>
+      <y-m>  0.031 </y-m>
+      <z-m> -0.030 </z-m>
     </center>
     <axis>
       <x> -1 </x>

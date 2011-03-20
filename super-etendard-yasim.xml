@@ -3,6 +3,7 @@
 <!-- Dassault-Breguet Super Etendard : BARANGER Emmanuel (2011) 
 
      Sources              : http://en.wikipedia.org/wiki/Dassault-Breguet_Super_%C3%89tendard
+                            http://www.netmarine.net/aero/aeronefs/setendard/caracter.htm
 
      Wingspan             :     9.60 m   ( 31 ft  6     in)
      Length               :    14.31 m   ( 45 ft 11 7/2 in)
@@ -10,12 +11,13 @@
      Empty mass           :     6500 kg  ( 14330 lb       )
      Engine               : SNECMA Atar 8K-50 turbojet, (11025 lbf)
      Maximum speed        : 1180 km/h    (   637 kts      ) at low level
-     Cruise speed         : 956 km/h     (   516 kts      )
+     Approach speed       :  225 km/h    (   122 kts      )
+     Cruise speed         :  956 km/h    (   516 kts      )
 -->
 
 <airplane mass="14330">
 
-  <approach speed="130" aoa="6" fuel="0.3">
+  <approach speed="122" aoa="6" fuel="0.3">
     <control-setting axis="/controls/engines/engine[0]/throttle" value="0.3"/>
     <control-setting axis="/controls/engines/engine[0]/reheat" value="0"/>
     <control-setting axis="/controls/gear/gear-down" value="1"/>
@@ -96,18 +98,17 @@
   </vstab>
 
   <!-- Engines   source            : http://en.wikipedia.org/wiki/SNECMA_Atar
+                                     http://fr.wikipedia.org/wiki/Snecma_Atar
 
                  name              : SNECMA Atar
                  type              : Afterburning turbojet
-                 power cruise      :  9436 lbf
-                 afterburner       : 13688 lbf
-                 weight            : 1456 kg (3210 lb)
+                 power cruise      : 11025 lbf
+                 weight            : 1165 kg (2568.38 lb)
   -->
   <jet x="-0.998" y="0" z="-0.441"
-       mass="3210"
-       thrust="9436"
-       afterburner="13688"
-       egt="935"
+       mass="2568.38"
+       thrust="11025"
+       egt="925"
        spool-time="6">
        <actionpt x="-6.161" y="0" z="-0.390"/>
        <control-input axis="/controls/engines/engine[0]/throttle" control="THROTTLE"/>
