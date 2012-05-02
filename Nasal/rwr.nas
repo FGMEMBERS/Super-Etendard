@@ -153,7 +153,7 @@ var Threat = {
 		obj.EcmSignalNorm  = obj.TgtsFiles.getNode("ecm-signal-norm", 1);
 		obj.EcmTypeNum     = obj.TgtsFiles.getNode("ecm_type_num", 1);
 
-		obj.RadarStandby = c.getNode("sim/multiplay/generic/int[2]");
+		obj.RadarStandby = c.getNode("sim/multiplay/generic/int[6]");
 		obj.deviation = nil;
 
 		return obj;

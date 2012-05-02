@@ -4,8 +4,17 @@
 <PropertyList include="super-etendard-yasim-cnf.xml">
 
   <sim>
-    <description>Dassault-Breguet Super Etendard</description>
+
+    <description>Dassault-Breguet Super Etendard (YASim)</description>
     <author>BARANGER Emmanuel</author>
+
+    <rating>
+      <FDM type="int">     1 </FDM>
+      <systems type="int"> 1 </systems>
+      <cockpit type="int"> 1 </cockpit>
+      <model type="int">   4 </model>
+    </rating>
+
   </sim>
 
 </PropertyList>

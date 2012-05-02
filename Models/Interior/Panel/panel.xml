@@ -13,7 +13,7 @@
  
   <!-- RWR -->
   <model>
-    <path>Aircraft/Super-Etendard/Models/Interior/Panel/Instruments/rwr/rwr.xml</path>
+    <path>Aircraft/Super-Etendard/Models/Interior/Panel/Instruments/radar/radar.xml</path>
     <offsets>
       <x-m> 0.261 </x-m>
       <y-m> 0.000 </y-m>

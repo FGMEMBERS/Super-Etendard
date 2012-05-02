@@ -238,16 +238,16 @@
   <!-- Une ombre pour OSG -->
   <model>
     <path>Aircraft/Super-Etendard/Models/shadow.xml</path>
+    <offsets>
+      <x-m>  0.000 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -1.900 </z-m>
+    </offsets>
   </model>
 
   <!-- Interieur -->
   <model>
     <path>Aircraft/Super-Etendard/Models/Interior/interior.xml</path>
-    <offsets>
-      <x-m> 0 </x-m>
-      <y-m> 0 </y-m>
-      <z-m> 0 </z-m>
-    </offsets>
   </model>
 
   <!-- Effets de tir -->
@@ -258,9 +258,7 @@
       <x-m> -2.448 </x-m>
       <y-m> -0.575 </y-m>
       <z-m> -0.808 </z-m>
-      <roll-deg>    0 </roll-deg>
       <pitch-deg> 180 </pitch-deg>
-      <heading-deg> 0 </heading-deg>
     </offsets>
   </model>
 
@@ -271,9 +269,7 @@
       <x-m> -2.448 </x-m>
       <y-m>  0.575 </y-m>
       <z-m> -0.808 </z-m>
-      <roll-deg>    0 </roll-deg>
       <pitch-deg> 180 </pitch-deg>
-      <heading-deg> 0 </heading-deg>
     </offsets>
   </model>
 
