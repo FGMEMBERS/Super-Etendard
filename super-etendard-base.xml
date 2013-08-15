@@ -1,10 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
 
   <sim include="Nasal/views.xml">
 
-    <author>BARANGER Emmanuel</author>
+    <description>Dassault-Breguet Super Etendard (YASim)</description>
+    <author>BARANGER Emmanuel (3D/FDM)</author>
     <aircraft-version>0.1</aircraft-version>
     <status>0.1 Alpha</status>
 
@@ -48,6 +49,11 @@
         <float n="3" alias="/smoke/colors/knob-red">1</float>                      <!-- 3 smoke mixer red setting -->
         <float n="4" alias="/smoke/colors/knob-green">1</float>                    <!-- 4 smoke mixer green setting -->
         <float n="5" alias="/smoke/colors/knob-blue">1</float>                     <!-- 5 smoke mixer blue setting -->
+        <float n="6" alias="/engines/engine[0]/n1" />
+        <!-- <float n="6" alias="/engines/engine[1]/n1" /> -->
+        <float n="8" alias="/controls/engines/engine[0]/throttle"/>
+        <!-- <float n="9" alias="/controls/engines/engine[1]/throttle"/> -->
+        <string n="0" type="string" />
         <string n="9" type="string" />                                             <!-- string[9] reserved for bombable mode -->
       </generic>
     </multiplay>
@@ -104,10 +110,16 @@
 
   <instrumentation>
     <radar>
+      <range type="int" archive="y">20</range>
+      <range-factor type="double" archive="n">0.001888</range-factor>
+      <minimized type="bool" archive="y">false</minimized>
+      <selected type="int">3</selected>
+      <!-- inicio en pruebas -->
       <enabled type="bool">true</enabled>
       <az-field type="double">120</az-field>
-      <range type="double">160</range>
-      <range-selected type="double">40</range-selected>
+      <range type="double">150</range>
+      <range-selected type="double">20</range-selected>
+      <radar2-range type="double">150</radar2-range>
       <display-rdr type="bool">true</display-rdr>
       <radar-standby type="int">0</radar-standby>
       <mode>
@@ -151,12 +163,15 @@
       <file>Aircraft/Super-Etendard/Nasal/light.nas</file>
       <file>Aircraft/Super-Etendard/Nasal/millibar.nas</file>
     </superetendard>
-    <radar>
-      <file>Aircraft/Instruments-3d/radar2/radar2.nas</file>
-    </radar>
+    <hud>
+      <file>Aircraft/Super-Etendard/Nasal/MiscRwr.nas</file>
+    </hud>
     <radardist>
       <file>Aircraft/Instruments-3d/radardist/radardist.nas</file>
     </radardist>
+    <radar>
+      <file>Aircraft/Super-Etendard/Nasal/radar2.nas</file> 
+    </radar>
     <guns>
       <file>Aircraft/Super-Etendard/Nasal/weapons.nas</file>
       <file>Aircraft/Super-Etendard/Nasal/revi.nas</file>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
 
@@ -15,9 +15,9 @@
   <model>
     <path>Aircraft/Super-Etendard/Models/Interior/Panel/Instruments/radar/radar.xml</path>
     <offsets>
-      <x-m> 0.261 </x-m>
+      <x-m> 0.187 </x-m>
       <y-m> 0.000 </y-m>
-      <z-m> 0.320 </z-m>
+      <z-m> 0.270 </z-m>
     </offsets>
   </model>
 
@@ -26,8 +26,8 @@
     <path>Aircraft/Super-Etendard/Models/Interior/Panel/Instruments/ai/ai.xml</path>
     <offsets>
       <x-m> 0.184 </x-m>
-      <y-m> 0.120 </y-m>
-      <z-m> 0.235 </z-m>
+      <y-m> 0.184 </y-m>
+      <z-m> 0.225 </z-m>
     </offsets>
   </model>
 
@@ -35,9 +35,9 @@
   <model>
     <path>Aircraft/Super-Etendard/Models/Interior/Panel/Instruments/asi/asi.xml</path>
     <offsets>
-      <x-m> 0.183 </x-m>
-      <y-m> 0.120 </y-m>
-      <z-m> 0.145 </z-m>
+      <x-m> 0.184 </x-m>
+      <y-m> 0.184 </y-m>
+      <z-m> 0.135 </z-m>
     </offsets>
   </model>
 
@@ -45,9 +45,9 @@
   <model>
     <path>Aircraft/Super-Etendard/Models/Interior/Panel/Instruments/alt/alt.xml</path>
     <offsets>
-      <x-m> 0.185 </x-m>
-      <y-m> 0.120 </y-m>
-      <z-m> 0.055 </z-m>
+      <x-m> 0.184 </x-m>
+      <y-m> 0.184 </y-m>
+      <z-m> 0.045 </z-m>
     </offsets>
   </model>
 
@@ -55,9 +55,9 @@
   <model>
     <path>Aircraft/Super-Etendard/Models/Interior/Panel/Instruments/ki206/ki206.xml</path>
     <offsets>
-      <x-m> 0.188 </x-m>
-      <y-m> 0.100 </y-m>
-      <z-m> 0.324 </z-m>
+      <x-m> 0.184 </x-m>
+      <y-m> 0.164 </y-m>
+      <z-m> 0.314 </z-m>
     </offsets>
   </model>
 
@@ -66,8 +66,8 @@
     <path>Aircraft/Super-Etendard/Models/Interior/Panel/Instruments/accel/accel.xml</path>
     <offsets>
       <x-m> 0.184 </x-m>
-      <y-m> 0.036 </y-m>
-      <z-m> 0.089 </z-m>
+      <y-m> 0.057 </y-m>
+      <z-m> 0.090 </z-m>
     </offsets>
   </model>
 

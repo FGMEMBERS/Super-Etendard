@@ -1,52 +1,45 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
 
-  <path>radar.ac</path>
+  <model>
+    <path>radar.ac</path>
+  </model>
 
   <animation>
-    <object-name>mount</object-name>
-    <object-name>bkg</object-name>
-    <object-name>screen</object-name>
-    <object-name>button</object-name>
-
-    <object-name>vitre</object-name>
+    <!-- Objets opaques -->
+    <object-name>fond</object-name>
+    <object-name>ecran</object-name>
   </animation>
 
   <animation>
     <type>material</type>
-    <object-name>mount</object-name>
-    <object-name>bkg</object-name>
-    <object-name>screen</object-name>
-    <object-name>button</object-name>
-    <emission>
-      <red>   0.50 </red>
-      <green> 0.25 </green>
-      <blue>  0.25 </blue>
-      <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
+    <object-name>fond</object-name>
+    <object-name>ecran</object-name>    
+    <emission>      
+      <factor> 0.13 </factor>
+      <red>    1.00 </red>
+      <green>  1.00 </green>
+      <blue>   1.00 </blue>
     </emission>
   </animation>
 
-  <animation>
-    <type>noshadow</type>
-    <object-name>vitre</object-name>
-  </animation>
-
-  <animation>
-    <type>shader</type>
-    <shader>chrome</shader>
-    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
-    <object-name>vitre</object-name>
-  </animation>
-
   <model>
-    <path>Aircraft/Instruments-3d/radar2/radar-screen.xml</path>
+    <name>MyRadar</name>
+    <path>mfd.xml</path>
     <offsets>
-      <x-m> -0.007 </x-m>
-      <y-m>  0.000 </y-m>
-      <z-m>  0.000 </z-m>
+      <x-m> 0.002 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.000 </z-m>
     </offsets>
   </model>
+  
+  <animation>
+    <type>scale</type>
+    <object-name>MyRadar</object-name> 
+    <x-offset> 1.00 </x-offset>
+    <y-offset> 1.70 </y-offset>
+    <z-offset> 1.70 </z-offset>
+  </animation>
 
 </PropertyList>
-

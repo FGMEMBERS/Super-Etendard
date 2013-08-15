@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
 
@@ -79,10 +79,16 @@
     <object-name>axeAD</object-name>
     <object-name>roueA</object-name>
     <object-name>axeG</object-name>
+    <object-name>axeGB</object-name>
+    <object-name>axeGC</object-name>
+    <object-name>axeGD</object-name>
     <object-name>roueG</object-name>
     <object-name>axeD</object-name>
     <object-name>roueD</object-name>
-
+    <object-name>roueDB</object-name>
+    <object-name>roueDC</object-name>
+    <object-name>roueDD</object-name>
+    
     <!-- Objets transparents -->
     <object-name>vitres</object-name>
     <object-name>canopy</object-name>
@@ -147,53 +153,23 @@
     <property-base>sim/model/livery</property-base>
     <texture-prop>texture</texture-prop>
     <texture>texture.png</texture>
-<!--
-    <diffuse>
-      <red-prop>diffuse/red</red-prop>
-      <green-prop>diffuse/green</green-prop>
-      <blue-prop>diffuse/blue</blue-prop>
-    </diffuse>
-
-    <ambient>
-      <red-prop>ambient/red</red-prop>
-      <green-prop>ambient/green</green-prop>
-      <blue-prop>ambient/blue</blue-prop>
-    </ambient>
--->
     <specular>
       <red-prop>specular/red</red-prop>
       <green-prop>specular/green</green-prop>
       <blue-prop>specular/blue</blue-prop>
     </specular>
-
     <emission>
       <red-prop>emission/red</red-prop>
       <green-prop>emission/green</green-prop>
       <blue-prop>emission/blue</blue-prop>
     </emission>
-<!--
-    <shininess>
-      <shininess-prop>shininess</shininess-prop>
-    </shininess>
--->
-  </animation>
-
-  <animation>
-    <type>shader</type>
-    <shader>chrome</shader>
-    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
-    <object-name>vitres</object-name>
-    <object-name>canopy</object-name>
-  </animation>
-
-  <animation>
-    <type>noshadow</type>
-    <object-name>vitres</object-name>
-    <object-name>canopy</object-name>
   </animation>
 
   <effect>
     <inherits-from>Aircraft/Generic/Effects/Fuselagereflect</inherits-from>
+    <condition>
+      <not><property>sim/rendering/rembrandt/enabled</property></not>
+    </condition>
     <object-name>fuselage</object-name>
     <object-name>ailes</object-name>
     <object-name>slatG</object-name>
@@ -235,6 +211,76 @@
     <object-name>attacheD</object-name>
   </effect>
 
+  <effect>
+    <inherits-from>Effects/model-combined-deferred</inherits-from>
+    <condition>
+      <property>sim/rendering/rembrandt/enabled</property>
+    </condition>
+    <object-name>fuselage</object-name>
+    <object-name>ailes</object-name>
+    <object-name>slatG</object-name>
+    <object-name>slatD</object-name>
+    <object-name>aileronG</object-name>
+    <object-name>aileronD</object-name>
+    <object-name>voletG</object-name>
+    <object-name>voletD</object-name>
+    <object-name>voletavantG</object-name>
+    <object-name>voletavantD</object-name>
+    <object-name>ailes2</object-name>
+    <object-name>direction</object-name>
+    <object-name>profondeurG</object-name>
+    <object-name>profondeurD</object-name>
+    <object-name>boutaileG</object-name>
+    <object-name>boutslatG</object-name>
+    <object-name>boutaileD</object-name>
+    <object-name>boutslatD</object-name>
+    <object-name>porteA1</object-name>
+    <object-name>porteA2</object-name>
+    <object-name>porteA3</object-name>
+    <object-name>porteG1</object-name>
+    <object-name>porteG2</object-name>
+    <object-name>porteD1</object-name>
+    <object-name>porteD2</object-name>
+    <object-name>ailettes</object-name>
+    <object-name>ajouts</object-name>
+    <object-name>caches</object-name>
+    <object-name>tourcanopy</object-name>
+    <object-name>freinG</object-name>
+    <object-name>freinD</object-name>
+    <object-name>freinG2</object-name>
+    <object-name>freinD2</object-name>
+    <object-name>capot1</object-name>
+    <object-name>capot2</object-name>
+    <object-name>antennes</object-name>
+    <object-name>attaches</object-name>
+    <object-name>attacheG</object-name>
+    <object-name>attacheD</object-name>
+  </effect>
+
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+    <object-name>vitres</object-name>
+    <object-name>canopy</object-name>
+  </animation>
+
+  <animation>
+    <type>noshadow</type>
+    <object-name>vitres</object-name>
+    <object-name>canopy</object-name>
+  </animation>
+
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+    <condition>
+      <property>sim/rendering/rembrandt/enabled</property>
+    </condition>
+    <object-name>vitres</object-name>
+    <object-name>canopy</object-name>
+  </effect>
+
   <!-- Une ombre pour OSG -->
   <model>
     <path>Aircraft/Super-Etendard/Models/shadow.xml</path>
@@ -247,8 +293,15 @@
 
   <!-- Interieur -->
   <model>
+    <name>Interieur</name>
     <path>Aircraft/Super-Etendard/Models/Interior/interior.xml</path>
   </model>
+
+  <!-- For Rembrandt -->
+  <animation>
+    <type>noshadow</type>
+    <object-name>Interieur</object-name>
+  </animation>
 
   <!-- Effets de tir -->
   <!-- Gauche -->
@@ -275,7 +328,7 @@
 
   <!-- Flamme -->
   <model>
-    <path>Aircraft/Super-Etendard/Models/Effects/flammes/flamme.xml</path>
+    <path>Aircraft/Super-Etendard/Models/Effects/flammes/combustion.xml</path>
     <offsets>
       <x-m>  6.161 </x-m>
       <y-m>  0.000 </y-m>
@@ -771,6 +824,9 @@
   <animation>
     <type>select</type>
     <object-name>axeG</object-name>
+    <object-name>axeGB</object-name>
+    <object-name>axeGC</object-name>
+    <object-name>axeGD</object-name>
     <object-name>roueG</object-name>
     <condition>
       <greater-than>
@@ -783,6 +839,9 @@
   <animation>
     <type>select</type>
     <object-name>axeD</object-name>
+    <object-name>axeDB</object-name>
+    <object-name>axeDC</object-name>
+    <object-name>axeDD</object-name>
     <object-name>roueD</object-name>
     <condition>
       <greater-than>
@@ -831,9 +890,23 @@
   </animation>
 
   <animation>
+    <type>pick</type>
+    <object-name>Canope</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>doors.crew.toggle();</script>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
     <type>rotate</type>
     <object-name>Canope</object-name>
-    <property>instrumentation/doors/crew/position-norm</property>
+    <property>sim/model/door-positions/crew/position-norm</property>
     <interpolation>
       <entry><ind> 0 </ind><dep>  0 </dep></entry>
       <entry><ind> 1 </ind><dep> 60 </dep></entry>
@@ -850,7 +923,7 @@
     </axis>
   </animation>
 
-  <!-- Canopy -->
+  <!-- Probe -->
   <animation>
     <name>Perche</name>
     <object-name>probe</object-name>
@@ -859,9 +932,23 @@
   </animation>
 
   <animation>
+    <type>pick</type>
+    <object-name>Perche</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>doors.passenger.toggle();</script>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
     <type>rotate</type>
     <object-name>Perche</object-name>
-    <property>instrumentation/doors/passenger/position-norm</property>
+    <property>sim/model/door-positions/passenger/position-norm</property>
     <interpolation>
       <entry><ind> 0 </ind><dep>  0 </dep></entry>
       <entry><ind> 1 </ind><dep> 50 </dep></entry>
@@ -881,7 +968,7 @@
   <animation>
     <type>rotate</type>
     <object-name>capot2</object-name>
-    <property>instrumentation/doors/passenger/position-norm</property>
+    <property>sim/model/door-positions/passenger/position-norm</property>
     <interpolation>
       <entry><ind> 0 </ind><dep>   0 </dep></entry>
       <entry><ind> 1 </ind><dep> -35 </dep></entry>
@@ -931,6 +1018,9 @@
   <animation>
     <name>TrainGauche</name>
     <object-name>axeG</object-name>
+    <object-name>axeGB</object-name>
+    <object-name>axeGC</object-name>
+    <object-name>axeGD</object-name>
     <object-name>roueG</object-name>
   </animation>
 
@@ -957,6 +1047,9 @@
   <animation>
     <name>TrainDroit</name>
     <object-name>axeD</object-name>
+    <object-name>axeDB</object-name>
+    <object-name>axeDC</object-name>
+    <object-name>axeDD</object-name>
     <object-name>roueD</object-name>
   </animation>
 
@@ -1099,6 +1192,16 @@
   </model>
 
   <model>
+    <name>BlancGauche</name>
+    <path>Aircraft/Super-Etendard/Models/lights/StrobeLight.xml</path>
+    <offsets>
+      <x-m>  3.102 </x-m>
+      <y-m> -4.762 </y-m>
+      <z-m> -0.721 </z-m>
+    </offsets>
+  </model>
+
+  <model>
     <name>Vert</name>
     <path>Aircraft/Super-Etendard/Models/lights/GreenLight.xml</path>
     <offsets>
@@ -1109,18 +1212,8 @@
   </model>
 
   <model>
-    <name>BlancGauche</name>
-    <path>Aircraft/Super-Etendard/Models/lights/StrobeWhite.xml</path>
-    <offsets>
-      <x-m>  3.102 </x-m>
-      <y-m> -4.762 </y-m>
-      <z-m> -0.721 </z-m>
-    </offsets>
-  </model>
-
-  <model>
     <name>BlancDroit</name>
-    <path>Aircraft/Super-Etendard/Models/lights/StrobeWhite.xml</path>
+    <path>Aircraft/Super-Etendard/Models/lights/StrobeLight.xml</path>
     <offsets>
       <x-m>  3.102 </x-m>
       <y-m>  4.762 </y-m>
@@ -1138,9 +1231,23 @@
   </animation>
 
   <animation>
+    <type>pick</type>
+    <object-name>TipWingLeft</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>doors.wings.toggle();</script>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
     <type>rotate</type>
     <object-name>TipWingLeft</object-name>
-    <property>instrumentation/doors/wings/position-norm</property>
+    <property>sim/model/door-positions/wings/position-norm</property>
     <factor> -90 </factor>
     <axis>
       <x1-m>  1.981 </x1-m>
@@ -1161,9 +1268,23 @@
   </animation>
 
   <animation>
+    <type>pick</type>
+    <object-name>TipWingRight</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>doors.wings.toggle();</script>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
     <type>rotate</type>
     <object-name>TipWingRight</object-name>
-    <property>instrumentation/doors/wings/position-norm</property>
+    <property>sim/model/door-positions/wings/position-norm</property>
     <factor> -90 </factor>
     <axis>
       <x1-m>  3.253 </x1-m>
@@ -1176,4 +1297,3 @@
   </animation>
 
 </PropertyList>
-
