@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <sim include="Nasal/views.xml">
+
+    <description>Dassault-Breguet Super Etendard (YASim)</description>
+    <author>BARANGER Emmanuel (3D/FDM)</author>
+    <aircraft-version>0.1</aircraft-version>
+    <status>0.1 Alpha</status>
+
+    <fuel-fraction>0.8</fuel-fraction>
+
+    <model>
+      <path>Aircraft/Super-Etendard/Models/super-etendard.xml</path>
+      <livery>
+        <file type="string">default</file>
+      </livery>
+    </model>
+
+    <submodels> 
+      <serviceable type="bool">true</serviceable>
+      <path>Aircraft/Super-Etendard/Models/Effects/guns/submodels.xml</path>
+    </submodels>
+
+    <startup>
+      <splash-texture>Aircraft/Super-Etendard/super-etendard-splash.png</splash-texture>
+    </startup>
+
+    <sound>
+      <path>Aircraft/Super-Etendard/Sounds/super-etendard-sound.xml</path>
+    </sound>
+
+    <multiplay>
+      <chat_display>1</chat_display>
+      <generic> 
+        <int type="int" n="0">  0 </int>                                           <!--  0 immat -->
+        <int type="int" n="1">  0 </int>                                           <!--  1 immat -->
+        <int type="int" n="2">  0 </int>                                           <!--  2 immat -->
+        <int type="int" n="3">  0 </int>                                           <!--  3 immat -->
+        <int type="int" n="4">  0 </int>                                           <!--  4 immat -->
+        <int type="int" n="5">  0 </int>                                           <!--  5 immat -->
+        <int type="bool" n="6" alias="/smoke/active"> 0 </int>                     <!--  6 start smoke -->
+        <int type="int" n="7" alias="smoke/particlepersec"> 50 </int>              <!--  7 particlepersec -->
+        <int type="int" n="10" alias="controls/armament/trigger">0</int>           <!-- 10 reserved for bombable mode -->
+        <float n="0" alias="/instrumentation/doors/crew/position-norm"/>
+        <float n="1" alias="/instrumentation/doors/passenger/position-norm"/>
+        <float n="2" alias="/position/gear-agl-m"> 0 </float>                      <!-- altitude for MP shadow -->
+        <float n="3" alias="/smoke/colors/knob-red">1</float>                      <!-- 3 smoke mixer red setting -->
+        <float n="4" alias="/smoke/colors/knob-green">1</float>                    <!-- 4 smoke mixer green setting -->
+        <float n="5" alias="/smoke/colors/knob-blue">1</float>                     <!-- 5 smoke mixer blue setting -->
+        <float n="6" alias="/engines/engine[0]/n1" />
+        <!-- <float n="6" alias="/engines/engine[1]/n1" /> -->
+        <float n="8" alias="/controls/engines/engine[0]/throttle"/>
+        <!-- <float n="9" alias="/controls/engines/engine[1]/throttle"/> -->
+        <string n="0" type="string" />
+        <string n="9" type="string" />                                             <!-- string[9] reserved for bombable mode -->
+      </generic>
+    </multiplay>
+
+    <flaps>
+      <setting> 0.00 </setting>
+      <setting> 0.25 </setting>
+      <setting> 0.50 </setting>
+      <setting> 0.75 </setting>
+      <setting> 1.00 </setting>
+    </flaps>
+
+    <help>
+      <title>Super Etendard</title>
+      <key>
+        <name>d</name>
+        <desc>Open/Close canopy</desc>
+      </key>
+      <key>
+        <name>D</name>
+        <desc>Open/Close probe</desc>
+      </key>
+      <key>
+        <name>C</name>
+        <desc>Catapult Launch Command</desc>
+      </key>
+      <key>
+        <name>L</name>
+        <desc>Launch-bar engage</desc>
+      </key>
+      <key>
+        <name>o/O</name>
+        <desc>Hook up/down</desc>
+      </key>
+      <key>
+        <name>f</name>
+        <desc>Wings fold</desc>
+      </key>
+    </help>
+
+    <menubar include="Dialogs/super-etendard-menu.xml"/>
+	
+  </sim>
+
+  <input>
+    <keyboard include="Nasal/super-etendard-keyboard.xml"/>
+  </input>
+ 
+  <controls>
+    <gear>
+      <brake-parking type="double"> 1 </brake-parking>
+    </gear>
+  </controls>
+
+  <instrumentation>
+    <radar>
+      <range type="int" archive="y">20</range>
+      <range-factor type="double" archive="n">0.001888</range-factor>
+      <minimized type="bool" archive="y">false</minimized>
+      <selected type="int">3</selected>
+      <!-- inicio en pruebas -->
+      <enabled type="bool">true</enabled>
+      <az-field type="double">120</az-field>
+      <range type="double">150</range>
+      <range-selected type="double">20</range-selected>
+      <radar2-range type="double">150</radar2-range>
+      <display-rdr type="bool">true</display-rdr>
+      <radar-standby type="int">0</radar-standby>
+      <mode>
+        <rws type="bool">true</rws>
+        <tws-auto type="bool">false</tws-auto>
+      </mode>
+    </radar>
+    <radar2>
+      <sweep-width-m type="double">0.0844</sweep-width-m>
+      <range-width-m type="double">0.0846</range-width-m>
+      <radius-ppi-display-m type="double">0.0846</radius-ppi-display-m>
+      <hud-eye-dist-m type="double">0.766</hud-eye-dist-m>
+      <hud-radius-m type="double">0.071</hud-radius-m>
+      <hud-vertical-offset-m type="double">-0.025</hud-vertical-offset-m>
+    </radar2>
+    <rwr>
+      <display-lighting-intens type="double">0.4</display-lighting-intens>
+      <symbology-lighting-intens type="double">1</symbology-lighting-intens>
+    </rwr>
+    <ecm>
+      <on-off type="bool">true</on-off>
+    </ecm>
+  </instrumentation>
+
+  <systems>
+    <refuel>
+      <type>probe</type>
+      <serviceable type="bool">true</serviceable>
+    </refuel>
+  </systems>
+
+  <nasal>
+    <aar>
+      <file>Aircraft/Generic/aar.nas</file>
+    </aar>
+    <doors>
+      <file>Aircraft/Super-Etendard/Nasal/doors.nas</file>
+    </doors>
+    <superetendard>
+      <file>Aircraft/Super-Etendard/Nasal/liveries.nas</file>
+      <file>Aircraft/Super-Etendard/Nasal/light.nas</file>
+      <file>Aircraft/Super-Etendard/Nasal/millibar.nas</file>
+    </superetendard>
+    <hud>
+      <file>Aircraft/Super-Etendard/Nasal/MiscRwr.nas</file>
+    </hud>
+    <radardist>
+      <file>Aircraft/Instruments-3d/radardist/radardist.nas</file>
+    </radardist>
+    <radar>
+      <file>Aircraft/Super-Etendard/Nasal/radar2.nas</file> 
+    </radar>
+    <guns>
+      <file>Aircraft/Super-Etendard/Nasal/weapons.nas</file>
+      <file>Aircraft/Super-Etendard/Nasal/revi.nas</file>
+    </guns>
+  </nasal>
+
+</PropertyList>
+

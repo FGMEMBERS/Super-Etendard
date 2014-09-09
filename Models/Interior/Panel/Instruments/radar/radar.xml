@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <model>
+    <path>radar.ac</path>
+  </model>
+
+  <animation>
+    <!-- Objets opaques -->
+    <object-name>fond</object-name>
+    <object-name>ecran</object-name>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>fond</object-name>
+    <object-name>ecran</object-name>    
+    <emission>      
+      <factor> 0.13 </factor>
+      <red>    1.00 </red>
+      <green>  1.00 </green>
+      <blue>   1.00 </blue>
+    </emission>
+  </animation>
+
+  <model>
+    <name>MyRadar</name>
+    <path>mfd.xml</path>
+    <offsets>
+      <x-m> 0.002 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.000 </z-m>
+    </offsets>
+  </model>
+  
+  <animation>
+    <type>scale</type>
+    <object-name>MyRadar</object-name> 
+    <x-offset> 1.00 </x-offset>
+    <y-offset> 1.70 </y-offset>
+    <z-offset> 1.70 </z-offset>
+  </animation>
+
+</PropertyList>
